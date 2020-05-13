@@ -8,11 +8,8 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
-
 from selenium.webdriver.support import expected_conditions as EC
-
 from selenium.webdriver.common.by import By
-
 from selenium.common.exceptions import TimeoutException
 
 # uses selenium to scrape stocktwits.com
@@ -92,7 +89,9 @@ def scrape(fileDirectory):
                 # Number of Watchers
                 watchers = driver.find_element_by_css_selector(
                     'strong').get_attribute('innerHTML')
+                watchers = str(watchers)
 
+                watchers = int(watchers.replace(',', ''))
                 # Price of Ticker
 
                 price = driver.find_element_by_css_selector('#app > div > div > div.st_1ccHZxv.st_jGV698i.st_1Z-amNw.st_cUBEAH8.st_3QTv-Ni > div.st_3rHBbGs.st_3QTv-Ni > div > div.st_2DHOr4A.st_3QTv-Ni.st_DmhifDD.st_CjvTpBY.st_2-AYUR9 > div.st_1vtoWp9.st_29vRgrA.st_1GuPg4J.st_2ve8DZ3 > div > div.st_2JjBhU0.st_jGV698i.st_cUBEAH8.st_3QTv-Ni > div > div > div.st_2U5mVnh.st_jGV698i.st_1GuPg4J.st_1jlXvfv > div.st_2Fof5or > span.st_3lrv4Jo.st_8u0ePN3.st_2oUi2Vb.st_31YdEUQ.st_8u0ePN3.st_2mehCkH.st_3kXJm4P').get_attribute('innerHTML')
