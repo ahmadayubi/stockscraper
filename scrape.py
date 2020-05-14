@@ -76,7 +76,8 @@ def scrape(fileDirectory):
                     priceChange = priceChange * -1
 
                 # Volume
-                myElem = WebDriverWait(driver, 3).until(
+                # might need to increase the 10 incase it times out
+                myElem = WebDriverWait(driver, 10).until(
                     EC.presence_of_element_located((By.CSS_SELECTOR, '.st_2TXS0JE:nth-child(7) > .st_17sIB4J')))
                 try:
                     vol = driver.find_element_by_css_selector(
