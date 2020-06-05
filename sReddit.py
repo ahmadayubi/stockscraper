@@ -3,6 +3,7 @@ import requests
 from collections import Counter
 import sys
 from flask import jsonify
+import os
 
 
 class RedditScraper():
