@@ -4,3 +4,4 @@ scrapev2.py
 test.py
 /temp/
 /env/
+/__pycache__/
