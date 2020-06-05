@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png"
+        href="http://s2.googleusercontent.com/s2/favicons?domain_url=https://ahmadayubi.com/" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>r/PennyStock Scraper</title>
+</head>
+
+<body>
+    </br>
+    </br>
+    <h2 style="text-align: center;">Top {{length}} Tickers From Both Top Hot And New Posts on r/PennyStocks</h2>
+    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="row">
+            <div class="col-sm">
+                <h4>Stocks Mentioned in Hot Posts</h4>
+                {% for stock in data[0] %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{stock[0]}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Mentions:{{stock[1]}}</h6>
+                        <a href="https://stocktwits.com/symbol/{{stock[0]}}" class="card-link">StockTwit Link</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm">
+                <h4>Tickers Mentioned in New Posts</h4>
+                {% for stock in data[1] %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{stock[0]}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Mentions:{{stock[1]}}</h6>
+                        <a href="https://stocktwits.com/symbol/{{stock[0]}}" class="card-link">StockTwit Link</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
