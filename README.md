@@ -1,2 +1,3 @@
-# stocktwitscraper
-scrape data off stocktwits.com for any ticker
+# stockscraper
+scrape data off r/pennystocks
+visit penny.ahmadayubi.com/10 to scrape 10 posts
